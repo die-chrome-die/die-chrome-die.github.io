@@ -1,0 +1,44 @@
+{"frames": {
+
+"Angry_Face":
+{
+	"frame": {"x":1,"y":1,"w":33,"h":43},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":33,"h":43},
+	"sourceSize": {"w":33,"h":43}
+},
+"Dead_Face":
+{
+	"frame": {"x":36,"y":1,"w":33,"h":43},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":33,"h":43},
+	"sourceSize": {"w":33,"h":43}
+},
+"Default_Face":
+{
+	"frame": {"x":71,"y":1,"w":33,"h":43},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":33,"h":43},
+	"sourceSize": {"w":33,"h":43}
+},
+"Shoot_Face":
+{
+	"frame": {"x":106,"y":1,"w":33,"h":43},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":33,"h":43},
+	"sourceSize": {"w":33,"h":43}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "/assets/Paper_Face_Sprite.png",
+	"format": "RGBA8888",
+	"size": {"w":140,"h":45},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:445cde5d9578c018f86f9d4c8123f922:893500a110903d5e2c3bd49066d75399:ea6adb08e631ce60769f302c70022ce7$"
+}
+}

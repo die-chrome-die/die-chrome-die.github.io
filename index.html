@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="initial-scale=1 maximum-scale=1 user-scalable=0 minimal-ui" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="HandheldFriendly" content="true" />
+
+		<title>Die, Chrome, Die!</title>
+
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+
+        <div id="main-frame-error" class="interstitial-wrapper">
+            <div id="main-content">
+                <div id="game"></div>
+
+                <div id="main-message">
+                    <h1>Unable to connect to the Internet</h1>
+                        <p>Google Chrome can’t display the webpage because your computer isn’t connected to the Internet.</p>
+                    <div class="error-code">ERR_INTERNET_DISCONNECTED</div>
+                </div>
+            </div>
+
+            <div id="buttons" class="nav-wrapper suggested-right">
+                <button id="run" class="button">DIE CHROME DIE</button>
+            </div>
+        </div>
+
+        <script src="js/phaser.min.js"></script>
+        <script src="js/boot.js"></script>
+        <script src="js/load.js"></script>
+        <script src="js/game.js"></script>
+        <script src="js/app.js"></script>
+	</body>
+</html>

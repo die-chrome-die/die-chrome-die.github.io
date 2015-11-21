@@ -1,0 +1,25 @@
+{
+  "name": "die-chrome-die",
+  "version": "0.0.1",
+  "description": "Die Chrome Die game",
+  "main": "server.js",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "node-static": "^0.7.7"
+  },
+  "scripts": {
+    "test": "npm run test",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "game",
+    "canvas",
+    "chrome",
+    "retro",
+    "8bit"
+  ],
+  "author": "Conrad Gray, Daniel Smith",
+  "license": "GPL-2.0"
+}
