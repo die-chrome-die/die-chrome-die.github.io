@@ -10,7 +10,7 @@ var playerFace = 'Default_Face';
 
 var bgtile;
 
-var spawnInterval = 3000;
+var spawnInterval = 1500;
 
 var gameState = {
 
@@ -47,6 +47,8 @@ var gameState = {
         var shootKey = this.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         shootKey.onDown.add(this.createBullet, this);
         shootKey.onUp.add(this.setAngryFace, this);
+
+        this.createChrome();
 
         game.time.events.loop(spawnInterval, this.createChrome, this);
     },
@@ -94,23 +96,24 @@ var gameState = {
 
     moveChromes: function () {
         this.chromes.forEach(function (chrome) {
+            // Move chrome
             chrome.body.velocity.x = 0;
             chrome.body.velocity.y = 0;
 
             chrome.body.velocity.x = -chromeSpeed;
+
+            // Rotate chrome
+            chrome.body.rotation += 5;
         });
     },
 
     createChrome: function () {
 
         if (play) {
-            var newY = game.world.randomY - 40;
-
-            if (newY < 0) {
-                newY = 40;
-            }
+            var newY = game.world.randomY;
 
             var chrome = this.chromes.create(gameWidth, newY >= gameHeight ? gameHeight - 40 : newY, 'chrome');
+            chrome.anchor.setTo(0.5, 0.5);
             chrome.checkWorldBounds = true;
             chrome.events.onOutOfBounds.add(this.removeChrome, this);
         }
