@@ -108,7 +108,6 @@ var gameState = {
     },
 
     createChrome: function () {
-
         if (play) {
             var newY = game.world.randomY;
 
@@ -177,6 +176,7 @@ var gameState = {
 
         this.playAgain = game.add.sprite(game.world.centerX - 17, game.world.centerY, 'reset');
         this.playAgain.inputEnabled = true;
+        this.playAgain.input.useHandCursor = true;
         this.playAgain.events.onInputDown.add(this.restartGame, this);
     },
 
