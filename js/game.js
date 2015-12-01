@@ -51,7 +51,7 @@ var gameState = {
         this.createChrome();
 
         if (play) {
-            scoreText = game.add.text(420, 0, spaceoutText('HI  00000   00000'), { font: "20px ArcadeClassic"} );
+            scoreText = game.add.text(420, 0, spaceoutText('HI  00000   00000'), { font: "20px ArcadeClassic", fill: '#737373'} );
         }
 
         game.time.events.loop(spawnInterval, this.createChrome, this);
@@ -180,7 +180,7 @@ var gameState = {
     },
 
     showEndScreen: function () {
-        endText = game.add.text(game.world.centerX, game.world.centerY - 30, spaceoutText('G a m e  O v e r'), { font: "20px ArcadeClassic"} );
+        endText = game.add.text(game.world.centerX, game.world.centerY - 30, spaceoutText('G a m e  O v e r'), { font: "20px ArcadeClassic", fill: '#535353'} );
         endText.anchor.x = 0.5;
 
         this.playAgain = game.add.sprite(game.world.centerX - 17, game.world.centerY, 'reset');
@@ -196,7 +196,7 @@ var gameState = {
         game.global.score = 0;
 
         play = true;
-        scoreText = game.add.text(420, 0, spaceoutText('HI  00000   00000'), { font: "20px ArcadeClassic"} );
+        scoreText = game.add.text(420, 0, spaceoutText('HI  00000   00000'), { font: "20px ArcadeClassic", fill: '#737373'} );
     }
 
 };

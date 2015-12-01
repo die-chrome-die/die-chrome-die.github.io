@@ -44,5 +44,5 @@ document.getElementById('run').addEventListener('click', function () {
     playerFace = 'Angry_Face';
     play = true;
 
-    scoreText = game.add.text(420, 0, spaceoutText('HI  00000   00000'), { font: "20px ArcadeClassic"} );
+    scoreText = game.add.text(420, 0, spaceoutText('HI  00000   00000'), { font: "20px ArcadeClassic", fill: '#737373'} );
 });
