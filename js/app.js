@@ -40,9 +40,13 @@ game.state.add('game', gameState);
 
 game.state.start('boot');
 
-document.getElementById('run').addEventListener('click', function () {
+var startBtn = document.getElementById('run');
+
+startBtn.addEventListener('click', function () {
     playerFace = 'Angry_Face';
     play = true;
+
+    startBtn.style.display = 'none';
 
     scoreText = game.add.text(420, 0, spaceoutText('HI  00000   00000'), { font: "20px ArcadeClassic", fill: '#737373'} );
 });
