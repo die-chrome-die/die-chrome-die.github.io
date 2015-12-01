@@ -2,7 +2,7 @@
 
 A simple game inspired by Chrome's hidden dinosaur game.
 
-Idea and design: Dan Smith
+Direction and Design: darsmith
 
 Coding: Conrad Gray
 
