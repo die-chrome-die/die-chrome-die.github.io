@@ -3,14 +3,21 @@ var downKey;
 var leftKey;
 var rightKey;
 
+var initialSetting = {
+    chromeSpeed: 150,
+    spawnInterval: 1500,
+    progressThreshold: 20
+};
+
 var playerSpeed = 200;
 var bulletSpeed = 800;
-var chromeSpeed = 150;
+var chromeSpeed = initialSetting.chromeSpeed;
 var playerFace = 'Default_Face';
 
 var bgtile;
 
-var spawnInterval = 1500;
+var spawnInterval = initialSetting.spawnInterval;
+var progressThreshold = initialSetting.progressThreshold;
 
 var gameState = {
 
@@ -69,6 +76,8 @@ var gameState = {
             this.moveBullets();
             this.updateScore();
 
+            this.playerProgress();
+
             bgtile.visible = true;
             bgtile.tilePosition.x -= 1;
         }
@@ -119,8 +128,7 @@ var gameState = {
                 newY = 0;
             }
 
-            var chrome = this.chromes.create(gameWidth, newY >= gameHeight ? gameHeight - 20 : newY + 20, 'chrome');
-
+            var chrome = this.chromes.create(gameWidth, newY >= gameHeight ? gameHeight - 30 : newY + 20, 'chrome');
             chrome.anchor.setTo(0.5, 0.5);
             chrome.checkWorldBounds = true;
             chrome.events.onOutOfBounds.add(this.removeChrome, this);
@@ -189,14 +197,27 @@ var gameState = {
         this.playAgain.events.onInputDown.add(this.restartGame, this);
     },
 
-    restartGame: function() {
+    restartGame: function () {
         game.time.events.start();
         game.state.start('game');
 
         game.global.score = 0;
 
+        chromeSpeed = initialSetting.chromeSpeed;
+        spawnInterval = initialSetting.spawnInterval;
+        progressThreshold = initialSetting.progressThreshold;
+
         play = true;
         scoreText = game.add.text(420, 0, spaceoutText('HI  00000   00000'), { font: "20px ArcadeClassic", fill: '#737373'} );
+    },
+
+    playerProgress: function () {
+        if (game.global.score > progressThreshold) {
+            chromeSpeed *= 1.15;
+            spawnInterval *= 0.9;
+
+            progressThreshold *= 1.5;
+        }
     }
 
 };
