@@ -50,6 +50,10 @@ var gameState = {
 
         this.createChrome();
 
+        if (play) {
+            scoreText = game.add.text(420, 0, spaceoutText('HI  00000   00000'), { font: "20px ArcadeClassic"} );
+        }
+
         game.time.events.loop(spawnInterval, this.createChrome, this);
     },
 
@@ -183,6 +187,8 @@ var gameState = {
     restartGame: function() {
         game.time.events.start();
         game.state.start('game');
+
+        game.global.score = 0;
 
         play = true;
         scoreText = game.add.text(420, 0, spaceoutText('HI  00000   00000'), { font: "20px ArcadeClassic"} );
