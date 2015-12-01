@@ -113,9 +113,14 @@ var gameState = {
 
     createChrome: function () {
         if (play) {
-            var newY = game.world.randomY;
+            var newY = game.world.randomY - 30;
 
-            var chrome = this.chromes.create(gameWidth, newY >= gameHeight ? gameHeight - 40 : newY, 'chrome');
+            if (newY < 0) {
+                newY = 0;
+            }
+
+            var chrome = this.chromes.create(gameWidth, newY >= gameHeight ? gameHeight - 20 : newY + 20, 'chrome');
+
             chrome.anchor.setTo(0.5, 0.5);
             chrome.checkWorldBounds = true;
             chrome.events.onOutOfBounds.add(this.removeChrome, this);
