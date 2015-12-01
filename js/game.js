@@ -58,7 +58,8 @@ var gameState = {
         this.createChrome();
 
         if (play) {
-            scoreText = game.add.text(420, 0, spaceoutText('HI  00000   00000'), { font: "20px ArcadeClassic", fill: '#737373'} );
+            var hs = formatScore(highScore.get(), 5);
+            scoreText = game.add.text(420, 0, spaceoutText('HI  ' + hs + '   00000'), { font: "20px ArcadeClassic", fill: '#737373'} );
         }
 
         game.time.events.loop(spawnInterval, this.createChrome, this);
@@ -159,9 +160,9 @@ var gameState = {
 
     updateScore: function () {
         var score = formatScore(game.global.score, 5);
-        var highScore = formatScore(0, 5);
+        var hs = formatScore(highScore.get(), 5);
 
-        scoreText.setText('HI  ' + highScore + '   ' + score);
+        scoreText.setText('HI  ' + hs + '   ' + score);
     },
 
     removeBullet: function (bullet) {
@@ -183,6 +184,12 @@ var gameState = {
         this.player.body.moves = false;
 
         game.time.events.stop();
+
+        var hs = highScore.get();
+
+        if (game.global.score > hs) {
+            highScore.set(game.global.score);
+        }
 
         this.showEndScreen();
     },
@@ -208,7 +215,9 @@ var gameState = {
         progressThreshold = initialSetting.progressThreshold;
 
         play = true;
-        scoreText = game.add.text(420, 0, spaceoutText('HI  00000   00000'), { font: "20px ArcadeClassic", fill: '#737373'} );
+
+        var hs = formatScore(highScore.get(), 5);
+        scoreText = game.add.text(420, 0, spaceoutText('HI  ' + hs + '   00000'), { font: "20px ArcadeClassic", fill: '#737373'} );
     },
 
     playerProgress: function () {

@@ -23,6 +23,24 @@ function formatScore(score, c) {
     return r + score;
 }
 
+var highScore = {
+    get: function () {
+        var hs = localStorage.getItem('highScore');
+
+        if (hs !== null) {
+            hs = parseInt(hs, 10);
+        } else {
+            hs = 0;
+        }
+
+        return hs;
+    },
+
+    set: function (score) {
+        localStorage.setItem('highScore', score);
+    }
+};
+
 var gameWidth = 600;
 var gameHeight = 150;
 var play = false;
@@ -48,5 +66,6 @@ startBtn.addEventListener('click', function () {
 
     startBtn.style.display = 'none';
 
-    scoreText = game.add.text(420, 0, spaceoutText('HI  00000   00000'), { font: "20px ArcadeClassic", fill: '#737373'} );
+    var hs = formatScore(highScore.get(), 5);
+    scoreText = game.add.text(420, 0, spaceoutText('HI  ' + hs + '   00000'), { font: "20px ArcadeClassic", fill: '#737373'} );
 });
