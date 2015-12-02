@@ -1,6 +1,6 @@
 # Die Chrome Die
 
-A simple game inspired by Chrome's hidden dinosaur game.
+A simple game inspired by Sebastien Gabriel's Lonely T-rex.
 
 Direction and Design: darsmith
 
